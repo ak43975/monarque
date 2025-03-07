@@ -1,7 +1,7 @@
 import phone from "../assets/phone.svg"
 import message from "../assets/message.svg"
 import facebook from "../assets/facebook.svg"
-import insta from "../assets/insta.svg"
+import insta from "../assets/Insta.svg"
 import yt from "../assets/yt.svg"
 import enterButton from "../assets/enterButton.svg"
 
