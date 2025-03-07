@@ -66,6 +66,7 @@ type CartProvider = {
 
 export default function CartProvider({ children }: CartProvider){
   const [prodImg, setProdImg] = useState<Product[]>(DummyData);
+  setProdImg(DummyData)
   const [cart, setCart] = useState<CartItem[]>([]);
 
   // Function to add products to the cart
