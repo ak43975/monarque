@@ -54,6 +54,7 @@ interface CartContextType {
   cart: CartItem[];
   addToCart: (product: Product) => void;
   updateQuantity: (product: Product, quantity: number) => void;
+  setProdImg: React.Dispatch<React.SetStateAction<Product[]>>;
   // addProduct: (newProduct: Product) => void;
 }
 
@@ -66,7 +67,7 @@ type CartProvider = {
 
 export default function CartProvider({ children }: CartProvider){
   const [prodImg, setProdImg] = useState<Product[]>(DummyData);
-  setProdImg(DummyData)
+  //setProdImg(DummyData)
   const [cart, setCart] = useState<CartItem[]>([]);
 
   // Function to add products to the cart
@@ -95,7 +96,7 @@ export default function CartProvider({ children }: CartProvider){
   // };
 
   return (
-    <CartContext.Provider value={{ prodImg, cart, addToCart, updateQuantity }}>
+    <CartContext.Provider value={{ prodImg, cart, addToCart, updateQuantity, setProdImg }}>
       {children}
     </CartContext.Provider>
   );
