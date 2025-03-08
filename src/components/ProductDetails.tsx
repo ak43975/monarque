@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { CartContext } from "../context/CartContext";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
@@ -28,6 +28,10 @@ const ProductDetails = () => {
         return navigate("/cart")
     }
   };
+
+  useEffect(()=>{
+    window.scrollTo({ top : 0 , behavior : "smooth"})
+  })
 
   return (
     <div className="flex flex-col md:flex-row w-[90%] mx-auto py-[3%] items-center">
