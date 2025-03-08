@@ -5,6 +5,9 @@ import { Routes } from "react-router-dom"
 import Products from "./components/Products"
 import Home from "./components/Home"
 import Cart from "./components/Cart"
+import { Toaster } from "react-hot-toast"
+import Checkout from "./components/Checkout"
+import OrderSuccess from "./components/OrderSuccess"
 
 function App() {
 
@@ -17,10 +20,13 @@ function App() {
           <Route path="/" element={<Home></Home>}></Route>
           <Route path="/products" element={<Products></Products>}></Route>
           <Route path="/cart" element={<Cart></Cart>}></Route>
+          <Route path="/checkout" element={<Checkout></Checkout>}></Route>
+          <Route path="/ordersuccess" element={<OrderSuccess></OrderSuccess>}></Route>
         </Routes>
       
 
       <Footer></Footer>
+      <Toaster></Toaster>
       
     </div>
   )

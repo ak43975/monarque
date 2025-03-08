@@ -1,8 +1,10 @@
 import { useContext } from "react";
 import { CartContext } from "../context/CartContext";
+import { useNavigate } from "react-router-dom";
 
 const Cart = () => {
   const cartContext = useContext(CartContext);
+  const navigate = useNavigate();
 
   if (!cartContext) {
     return <p>Loading...</p>; // Handle undefined context
@@ -65,7 +67,7 @@ const Cart = () => {
           {/* Checkout Section */}
           <div className="mt-5 p-4 border-t flex justify-between items-center">
             <h2 className="text-xl font-semibold">Total: ₹{totalPrice}</h2>
-            <button className="bg-blue-600 text-white px-5 py-2 rounded-md">
+            <button className="bg-blue-600 text-white px-5 py-2 rounded-md cursor-pointer" onClick={()=>navigate("/checkout")}>
               Checkout
             </button>
           </div>
