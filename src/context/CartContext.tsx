@@ -94,6 +94,7 @@ interface CartContextType {
   addToCart: (product: CartItem) => void;
   updateQuantity: (product: Product, quantity: number) => void;
   setProdImg: React.Dispatch<React.SetStateAction<Product[]>>;
+  reset: () => void;
   // addProduct: (newProduct: Product) => void;
 }
 
@@ -131,10 +132,15 @@ export default function CartProvider({ children }: CartProvider){
         .filter((item) => item.quantity > 0) // Remove items with quantity 0
     );
   };
+
+  const reset = () => {
+    setCart([]);
+  };
+  
   
 
   return (
-    <CartContext.Provider value={{ prodImg, cart, addToCart, updateQuantity, setProdImg }}>
+    <CartContext.Provider value={{ prodImg, cart, addToCart, updateQuantity, setProdImg, reset }}>
       {children}
     </CartContext.Provider>
   );
