@@ -16,12 +16,12 @@ const ContactUs = (props : {id : string}) => {
                         <table>
                             <tr>
                                 <td className="p-2">Phone:</td>
-                                <td className="p-2">+91 701159733</td>
+                                <td className="p-2">+91 8800207169</td>
                             </tr>
 
                             <tr>
                                 <td className="p-2">Email:</td>
-                                <td className="p-2">luxaryperfumes@gmail.com</td>
+                                <td className="p-2">abhinavkapoor221@gmail.com</td>
                             </tr>
                         </table>
 

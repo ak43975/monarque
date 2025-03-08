@@ -1,5 +1,7 @@
 import product2 from "../assets/product2_page-0001.jpg";
 import product4 from "../assets/product4_page-0001.jpg";
+import product1 from "../assets/Oud_page-0001.jpg"
+import product3 from "../assets/OceanNoirSKU_page-0001.jpg"
 import { useNavigate } from "react-router-dom";
 import { CartContext } from "../context/CartContext";
 import { useContext, useEffect , useState } from "react";
@@ -23,7 +25,7 @@ const HomeProducts = () => {
     useEffect(() => {
         let initialData: Data[] = [
             {
-                image: product4,
+                image: product1,
                 title: "xyz",
                 originalPrice: 999,
                 discountedPrice: 699,
@@ -35,13 +37,13 @@ const HomeProducts = () => {
                 discountedPrice: 699,
             },
             {
-                image: product4,
+                image: product3,
                 title: "xyz",
                 originalPrice: 999,
                 discountedPrice: 699,
             },
             {
-                image: product2,
+                image: product4,
                 title: "xyz",
                 originalPrice: 999,
                 discountedPrice: 699,
@@ -67,7 +69,7 @@ const HomeProducts = () => {
 
             <div className="flex">
                 {data.map((item, index) => (
-                    <div key={index} className="relative border border-black/50 overflow-hidden cursor-pointer" onClick={() => navigate(`/product/${item.title}`)}>
+                    <div key={index} className="relative border border-black/50 overflow-hidden cursor-pointer w-[25%]" onClick={() => navigate(`/product/${item.title}`)}>
                         {/* Image */}
                         <img src={item.image} alt="" className="w-full h-full object-cover" />
 

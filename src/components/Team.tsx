@@ -1,14 +1,15 @@
 import { useState, useEffect } from "react";
-import reflection from "../assets/REFLECTION-100-ML.jpg.svg"
-import guidance from "../assets/GUIDANCE-WOMAN-100-ML_178c631a-eaa5-4599-bce9-cb53a53486af.jpg.svg"
-import secretGarden from "../assets/Amouage_SecretGarden_CommercialShot_LoveDelight_Bottle_990x941px_0679e2f4-4fac-469d-a5aa-cda150dd2182.jpg.svg"
-import outlands from "../assets/outlands_updated1.jpg 1.svg"
 import perfumeLeft from "../assets/perfumeLeft.svg"
 import perfumeRight from "../assets/perfumeRight.svg"
+import abhinav from "../assets/Abhinav Kapoor_page-0001 (1).jpg"
+import muskan from "../assets/MuskaanTeamMate_page-0001.jpg"
+import sarthak from "../assets/SarthakTeamMate_page-0001.jpg"
+import sanidhya from "../assets/person3.jpg"
+import shristi from "../assets/SrishtiMonarque_page-0001.jpg"
 
-const Team = (props : {id : string}) => {
+const Team = (props: { id: string }) => {
     const images = [
-        reflection, guidance, secretGarden, outlands, guidance
+        abhinav, muskan, sarthak, sanidhya, shristi
     ]
     const captions = [
         "Abhinav Kapoor",
@@ -22,7 +23,7 @@ const Team = (props : {id : string}) => {
     const [currentIndex, setCurrentIndex] = useState(0);
 
     useEffect(() => {
-        console.log("images" , images.length)
+        console.log("images", images.length)
         const interval = setInterval(() => {
             setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
 
@@ -38,7 +39,7 @@ const Team = (props : {id : string}) => {
             <div className="flex justify-between items-center w-[85%] mx-auto ">
                 <div className="flex flex-col gap-[15px] w-[57%] h-fit text-[#282828] tracking-normal" style={{ fontFamily: "'Montserrat', sans-serif" }}>
                     <div className="text-[48px] font-[400]">
-                        Meet TheTeam
+                        Meet The Team
                     </div>
 
                     <div className="text-[20px] font-[700]">
@@ -56,10 +57,14 @@ const Team = (props : {id : string}) => {
 
                 <div className="w-[34%] h-[700px]  relative">
 
-                    <div className="w-[100%] h-[90%] border-4 border-[#310C07] rounded-[9%] overflow-hidden relative">
+                    <div className="w-[100%] h-[90%] border-4 border-[#310C07] rounded-[9%] overflow-hidden relative ">
+
+                        {/* Black Overlay */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent z-10"></div>
+
                         {/* Image Wrapper (For Sliding Effect) */}
                         <div
-                            className="relative flex w-full h-full transition-transform duration-500 ease-in-out"
+                            className="relative flex w-full h-full transition-transform duration-500 ease-in-out "
                             style={{ transform: `translateX(-${currentIndex * 100}%)` }}
                         >
                             {images.map((src, index) => (
@@ -67,15 +72,15 @@ const Team = (props : {id : string}) => {
                                     key={index}
                                     src={src}
                                     alt={`Slide ${index}`}
-                                    className="w-full h-full object-cover shrink-0"
+                                    className="w-full h-full object-cover shrink-0  "
                                 />
                             ))}
 
                         </div>
-                        
+
                     </div>
 
-                    
+
 
                     <div className="absolute top-[92%] left-1/2 transform -translate-x-1/2 flex space-x-2 ">
                         {images.map((_, index) => (
@@ -86,7 +91,7 @@ const Team = (props : {id : string}) => {
                         ))}
                     </div>
 
-                    <div className="absolute bottom-[15%] left-1/2 transform -translate-x-1/2 text-[#310C07] text-lg font-bold">
+                    <div className="absolute bottom-[15%] left-1/2 transform -translate-x-1/2 text-white text-lg font-bold z-10">
                         {captions[currentIndex]}
                     </div>
 
@@ -95,7 +100,7 @@ const Team = (props : {id : string}) => {
             </div>
 
             <img src={perfumeLeft} alt="" className="absolute bottom-0" />
-            <img src={perfumeRight} alt="" className="absolute bottom-0 right-0"/>
+            <img src={perfumeRight} alt="" className="absolute bottom-0 right-0" />
         </div>
     )
 }
