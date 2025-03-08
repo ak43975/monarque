@@ -3,6 +3,8 @@ import message from "../assets/message.svg"
 import facebook from "../assets/facebook.svg"
 import insta from "../assets/Insta.svg"
 import yt from "../assets/yt.svg"
+import linkedin from "../assets/linkedin.svg"
+import x from "../assets/x.svg"
 // import enterButton from "../assets/enterButton.svg"
 
 const Footer = () => {
@@ -29,9 +31,11 @@ const Footer = () => {
                     </div>
 
                     <div className="flex gap-[15px]">
-                        <img src={facebook} alt="" className="cursor-pointer"/>
-                        <img src={insta} alt="" className="cursor-pointer"/>
-                        <img src={yt} alt="" className="cursor-pointer"/>
+
+                        <a href="https://www.linkedin.com/in/mymonarque/" target="_blank"><img src={linkedin} alt="" className="cursor-pointer" /></a>
+                        <a href="https://www.instagram.com/mymonarque/" target="_blank"><img src={insta} alt="" className="cursor-pointer" /></a>
+                        <a href="https://x.com/mymonarque/" target="_blank"><img src={x} alt="" className="cursor-pointer" /></a>
+                        
                     </div>
                 </div>
 

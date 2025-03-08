@@ -8,3 +8,8 @@ body {
     font-family: 'Playfair Display', serif;
     letter-spacing: 1px;
   }
+
+  link[rel="icon"] {
+    border-radius: 50%;
+  }
+  

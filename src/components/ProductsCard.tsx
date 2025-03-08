@@ -31,18 +31,18 @@ const ProductsCard: React.FC<ProductsCardProps> = ({
 
   return (
 
-    <div className="w-[23%] my-[3%]" onClick={() => navigate(`/product/${title}`)}>
+    <div className="w-[23%] my-[3%] cursor-pointer" onClick={() => navigate(`/product/${title}`)}>
       <img src={imageLink} alt="" className="w-[100%] rounded-xl" />
 
       <div className="mt-[4%]">
         {/* title */}
         <h2 className="text-xl font-semibold">{title}</h2>
         
-        <p className="text-md" style={{ fontFamily: "'Montserrat', sans-serif" }}>
-          <span className="line-through text-gray-500">₹{Originalprice}</span>{" "}
+        <p className="text-md" >
+          <span className="line-through text-gray-500" style={{ fontFamily: "'Montserrat', sans-serif" }}>₹{Originalprice}</span>{" "}
           <span className=" font-bold ">
             <span>₹{DiscountedPrice}</span>
-            <span className="text-red-500  mx-[1%]">{`(${DiscountPerc}% off)`}</span>
+            <span className="text-red-500 text-xs mx-[1%] " style={{ fontFamily: "'Montserrat', sans-serif" }}>{`(${DiscountPerc}% off)`}</span>
           </span>
         </p>
         

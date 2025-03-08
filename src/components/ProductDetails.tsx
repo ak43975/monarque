@@ -61,7 +61,7 @@ const ProductDetails = () => {
 
           <div className="mt-3 text-lg">
             <span className="line-through text-gray-500">₹{product.Originalprice}</span>{" "}
-            <span className="text-green-600 font-bold text-2xl">₹{product.DiscountedPrice}</span>
+            <span className=" font-bold text-2xl">₹{product.DiscountedPrice}</span>
           </div>
 
           <p className="text-red-500 text-sm">{product.DiscountPerc}% off</p>

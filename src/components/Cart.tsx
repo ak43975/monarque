@@ -40,7 +40,7 @@ const Cart = () => {
                 <p className="text-gray-600 text-sm line-clamp-2">{item.description}</p>
                 <p className="text-lg">
                   <span className="line-through text-gray-500">₹{item.Originalprice}</span>{" "}
-                  <span className="text-green-600 font-bold">₹{item.DiscountedPrice}</span>
+                  <span className=" font-bold">₹{item.DiscountedPrice}</span>
                 </p>
                 <p className="text-red-500 text-sm">{item.DiscountPerc}% off</p>
 
