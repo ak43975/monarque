@@ -3,6 +3,7 @@ import returns from "../assets/returns.svg"
 import cod from "../assets/cod.svg"
 
 const HomeSection2 = ()=>{
+
     const data = [{
         image : car,
         content : "Free Shipping"
@@ -29,8 +30,20 @@ const HomeSection2 = ()=>{
                 }
             </div>
 
-            <div className="w-full h-[550px] bg-[url('/assets/heroSection2Img.svg')]  bg-contain bg-no-repeat">
+            <div className="w-full h-[550px] flex justify-center items-center overflow-hidden">
+                {/* Left Image (section302) */}
+                <img
+                    src="/assets/section302.png"
+                    alt="Section 302"
+                    className="w-2/3 h-full object-cover transition-transform duration-500 hover:scale-110 overflow-hidden"
+                />
 
+                {/* Right Image (section301) */}
+                <img
+                    src="/assets/section301.png"
+                    alt="Section 301"
+                    className="w-1/3 h-full object-cover transition-transform duration-500 hover:scale-110 overflow-hidden"
+                />
             </div>
         </div>
     )

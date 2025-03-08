@@ -52,7 +52,7 @@ const DummyData : Product[] = [
 interface CartContextType {
   prodImg: Product[];
   cart: CartItem[];
-  addToCart: (product: Product) => void;
+  addToCart: (product: CartItem) => void;
   updateQuantity: (product: Product, quantity: number) => void;
   setProdImg: React.Dispatch<React.SetStateAction<Product[]>>;
   // addProduct: (newProduct: Product) => void;
@@ -71,7 +71,7 @@ export default function CartProvider({ children }: CartProvider){
   const [cart, setCart] = useState<CartItem[]>([]);
 
   // Function to add products to the cart
-  const addToCart = (product: Product) => {
+  const addToCart = (product: CartItem) => {
     setCart((prevCart) => {
       const existingItem = prevCart.find((item) => item.title === product.title);
       if (existingItem) {
@@ -85,15 +85,14 @@ export default function CartProvider({ children }: CartProvider){
   
   const updateQuantity = (product: Product, quantity: number) => {
     setCart((prevCart) =>
-      prevCart.map((item) =>
-        item.title === product.title ? { ...item, quantity } : item
-      )
+      prevCart
+        .map((item) =>
+          item.title === product.title ? { ...item, quantity: Math.max(quantity, 0) } : item
+        )
+        .filter((item) => item.quantity > 0) // Remove items with quantity 0
     );
   };
-
-  // const addProduct = (newProduct: string) => {
-  //   setProdImg((prev) => [...prev, newProduct]);
-  // };
+  
 
   return (
     <CartContext.Provider value={{ prodImg, cart, addToCart, updateQuantity, setProdImg }}>

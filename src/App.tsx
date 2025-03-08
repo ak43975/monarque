@@ -8,6 +8,7 @@ import Cart from "./components/Cart"
 import { Toaster } from "react-hot-toast"
 import Checkout from "./components/Checkout"
 import OrderSuccess from "./components/OrderSuccess"
+import ProductDetails from "./components/ProductDetails"
 
 function App() {
 
@@ -22,6 +23,7 @@ function App() {
           <Route path="/cart" element={<Cart></Cart>}></Route>
           <Route path="/checkout" element={<Checkout></Checkout>}></Route>
           <Route path="/ordersuccess" element={<OrderSuccess></OrderSuccess>}></Route>
+          <Route path="/product/:title" element={<ProductDetails />} />
         </Routes>
       
 

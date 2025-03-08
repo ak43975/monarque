@@ -10,6 +10,13 @@ const Team = (props : {id : string}) => {
     const images = [
         reflection, guidance, secretGarden, outlands, guidance
     ]
+    const captions = [
+        "Abhinav Kapoor",
+        "Muskaan Gangwal",
+        "Sarthak Khanna",
+        "Sanidhya Sinha",
+        "Srishti Kataria"
+    ];
 
 
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -29,7 +36,7 @@ const Team = (props : {id : string}) => {
     return (
         <div {...props} className="relative w-[100%] py-[9%]">
             <div className="flex justify-between items-center w-[85%] mx-auto ">
-                <div className="flex flex-col gap-[15px] w-[57%] h-fit text-[#282828] ">
+                <div className="flex flex-col gap-[15px] w-[57%] h-fit text-[#282828] tracking-normal" style={{ fontFamily: "'Montserrat', sans-serif" }}>
                     <div className="text-[48px] font-[400]">
                         Meet TheTeam
                     </div>
@@ -52,7 +59,7 @@ const Team = (props : {id : string}) => {
                     <div className="w-[100%] h-[90%] border-4 border-[#310C07] rounded-[9%] overflow-hidden relative">
                         {/* Image Wrapper (For Sliding Effect) */}
                         <div
-                            className="flex w-full h-full transition-transform duration-500 ease-in-out"
+                            className="relative flex w-full h-full transition-transform duration-500 ease-in-out"
                             style={{ transform: `translateX(-${currentIndex * 100}%)` }}
                         >
                             {images.map((src, index) => (
@@ -63,8 +70,12 @@ const Team = (props : {id : string}) => {
                                     className="w-full h-full object-cover shrink-0"
                                 />
                             ))}
+
                         </div>
+                        
                     </div>
+
+                    
 
                     <div className="absolute top-[92%] left-1/2 transform -translate-x-1/2 flex space-x-2 ">
                         {images.map((_, index) => (
@@ -73,6 +84,10 @@ const Team = (props : {id : string}) => {
                                 className={`w-2 border h-2 rounded-full ${currentIndex === index ? "bg-[#310C07]" : "bg-white"}`}
                             />
                         ))}
+                    </div>
+
+                    <div className="absolute bottom-[15%] left-1/2 transform -translate-x-1/2 text-[#310C07] text-lg font-bold">
+                        {captions[currentIndex]}
                     </div>
 
 

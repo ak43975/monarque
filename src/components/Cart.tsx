@@ -47,14 +47,14 @@ const Cart = () => {
                 {/* Quantity Controls */}
                 <div className="mt-2 flex items-center gap-3">
                   <button
-                    className="px-3 py-1 bg-gray-200 rounded-md"
-                    onClick={() => updateQuantity(item, Math.max(1, item.quantity - 1))}
+                    className="px-3 py-1 bg-gray-200 rounded-md cursor-pointer"
+                    onClick={() => updateQuantity(item, Math.max(0, item.quantity - 1))}
                   >
                     -
                   </button>
                   <span className="text-lg">{item.quantity}</span>
                   <button
-                    className="px-3 py-1 bg-gray-200 rounded-md"
+                    className="px-3 py-1 bg-gray-200 rounded-md cursor-pointer"
                     onClick={() => updateQuantity(item, item.quantity + 1)}
                   >
                     +
@@ -67,7 +67,7 @@ const Cart = () => {
           {/* Checkout Section */}
           <div className="mt-5 p-4 border-t flex justify-between items-center">
             <h2 className="text-xl font-semibold">Total: ₹{totalPrice}</h2>
-            <button className="bg-blue-600 text-white px-5 py-2 rounded-md cursor-pointer" onClick={()=>navigate("/checkout")}>
+            <button className="bg-[#3C0B04] text-white px-5 py-2 rounded-md cursor-pointer" onClick={()=>navigate("/checkout")}>
               Checkout
             </button>
           </div>
