@@ -34,9 +34,9 @@ const DummyData : Product[] = [
     DiscountedPrice : 699,
     DiscountPerc : 30,
     reviews: [
-      { authorName: "Daniel R.", description: "Oud Eclipse is pure sophistication in a bottle! The deep, smoky oud mixed with warm spices lasts all day, making me feel confident and luxurious.", rating: 5 },
-      { authorName: "Sophia M.", description: "This fragrance is a masterpiece—rich, intense, and captivating. Every time I wear it, I get compliments on how elegant and unique it smells.", rating: 5 },
-      { authorName: "Ethan J.", description: "If luxury had a scent, this would be it! The perfect balance of woody oud and subtle sweetness creates an aura of mystery and power.", rating: 5 }
+      { authorName: "Rajesh K.", description: "Oud Eclipse is pure sophistication in a bottle! The deep, smoky oud mixed with warm spices lasts all day, making me feel confident and luxurious.", rating: 5 },
+      { authorName: "Priya S.", description: "This fragrance is a masterpiece—rich, intense, and captivating. Every time I wear it, I get compliments on how elegant and unique it smells.", rating: 5 },
+      { authorName: "Rishabh D.", description: "If luxury had a scent, this would be it! The perfect balance of woody oud and subtle sweetness creates an aura of mystery and power.", rating: 5 }
     ],
     ml:15
   },
@@ -49,9 +49,9 @@ const DummyData : Product[] = [
     DiscountedPrice : 699,
     DiscountPerc : 30,
     reviews: [
-      { authorName: "Isabelle T.", description: "Cedar Bloom feels like a walk through a sunlit forest. The crisp cedarwood and earthy undertones create a refreshing yet warm scent that lasts for hours.", rating: 5 },
-      { authorName: "Liam S.", description: "This fragrance has an incredible balance of freshness and depth. The cedarwood note is rich and grounding, making it my go-to scent for any occasion.", rating: 5 },
-      { authorName: "Hugo D.", description: "Monarque has outdone itself with Cedar Bloom. It’s fresh, elegant, and makes me feel connected to nature while exuding sophistication.", rating: 5 }
+      { authorName: "Rajan Verma", description: "Cedar Bloom feels like a walk through a sunlit forest. The crisp cedarwood and earthy undertones create a refreshing yet warm scent that lasts for hours.", rating: 5 },
+      { authorName: "Rahul Pandey", description: "This fragrance has an incredible balance of freshness and depth. The cedarwood note is rich and grounding, making it my go-to scent for any occasion.", rating: 5 },
+      { authorName: "Sanat K. Mishra", description: "Monarque has outdone itself with Cedar Bloom. It’s fresh, elegant, and makes me feel connected to nature while exuding sophistication.", rating: 5 }
     ],
     ml:15
   },
@@ -64,9 +64,9 @@ const DummyData : Product[] = [
     DiscountedPrice : 699,
     DiscountPerc : 30,
     reviews: [
-      { authorName: "Amelia W.", description: "Ocean Noir is the perfect blend of freshness and mystery. The marine notes mixed with deep amber make it irresistible—like a night by the ocean.", rating: 5 },
-      { authorName: "Nathan P.", description: "This scent is magnetic! It starts fresh and aquatic but develops into something rich and sensual. A true signature fragrance.", rating: 5 },
-      { authorName: "Lucas G.", description: "Every time I wear Ocean Noir, I feel unstoppable. The scent is deep yet fresh, making it perfect for both daytime confidence and evening allure.", rating: 5 }
+      { authorName: "Julia J.", description: "Ocean Noir is the perfect blend of freshness and mystery. The marine notes mixed with deep amber make it irresistible—like a night by the ocean.", rating: 5 },
+      { authorName: "Narendra M.", description: "This scent is magnetic! It starts fresh and aquatic but develops into something rich and sensual. A true signature fragrance.", rating: 5 },
+      { authorName: "Mohd. Umar", description: "Every time I wear Ocean Noir, I feel unstoppable. The scent is deep yet fresh, making it perfect for both daytime confidence and evening allure.", rating: 5 }
     ],
     ml:15
   },

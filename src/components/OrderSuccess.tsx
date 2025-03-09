@@ -6,7 +6,7 @@ const OrderSuccess = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    setTimeout(() => navigate("/"), 4000); // Redirect to Home after 3 sec
+    setTimeout(() => navigate("/"), 10 * 1000); // Redirect to Home after 3 sec
   }, [navigate]);
 
   return (
@@ -27,6 +27,10 @@ const OrderSuccess = () => {
       </motion.div>
       <h1 className="text-3xl font-bold mt-5">Order Placed Successfully!</h1>
       <p className="text-lg">Your order will be delivered soon.</p>
+      <p>Order ID: 123223343</p>
+      <p>Cart Items: Odu Ecllipse</p>
+      <p>Total Price: Rs 699</p>
+      <p>Delivery expected : 16th march</p>
     </motion.div>
   );
 };
