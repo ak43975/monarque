@@ -49,9 +49,9 @@ const DummyData : Product[] = [
     DiscountedPrice : 699,
     DiscountPerc : 30,
     reviews: [
-      { authorName: "Rajan Verma", description: "Cedar Bloom feels like a walk through a sunlit forest. The crisp cedarwood and earthy undertones create a refreshing yet warm scent that lasts for hours.", rating: 5 },
-      { authorName: "Rahul Pandey", description: "This fragrance has an incredible balance of freshness and depth. The cedarwood note is rich and grounding, making it my go-to scent for any occasion.", rating: 5 },
-      { authorName: "Sanat K. Mishra", description: "Monarque has outdone itself with Cedar Bloom. It’s fresh, elegant, and makes me feel connected to nature while exuding sophistication.", rating: 5 }
+      { authorName: "Rajan V.", description: "Cedar Bloom feels like a walk through a sunlit forest. The crisp cedarwood and earthy undertones create a refreshing yet warm scent that lasts for hours.", rating: 5 },
+      { authorName: "Rahul P.", description: "This fragrance has an incredible balance of freshness and depth. The cedarwood note is rich and grounding, making it my go-to scent for any occasion.", rating: 5 },
+      { authorName: "Sanat K.", description: "Monarque has outdone itself with Cedar Bloom. It’s fresh, elegant, and makes me feel connected to nature while exuding sophistication.", rating: 5 }
     ],
     ml:15
   },
@@ -79,9 +79,9 @@ const DummyData : Product[] = [
     DiscountedPrice : 699,
     DiscountPerc : 30,
     reviews: [
-      { authorName: "Emily C.", description: "Absolutely delicious! Pistachio Caramel is like wearing a warm, creamy dessert. The nutty sweetness is perfectly balanced—sophisticated yet addictive!", rating: 5 },
-      { authorName: "Olivia H.", description: "I can’t get enough of this fragrance. It smells like a luxury patisserie, with hints of roasted pistachios and golden caramel melting together beautifully.", rating: 5 },
-      { authorName: "Sophia L.", description: "Sweet but not overpowering—Pistachio Caramel is my new favorite gourmand scent! It’s comforting, unique, and makes me feel like a true indulgence.", rating: 5 }
+      { authorName: "Rishabh P.", description: "Absolutely delicious! Pistachio Caramel is like wearing a warm, creamy dessert. The nutty sweetness is perfectly balanced—sophisticated yet addictive!", rating: 5 },
+      { authorName: "Satvik S.", description: "I can’t get enough of this fragrance. It smells like a luxury patisserie, with hints of roasted pistachios and golden caramel melting together beautifully.", rating: 5 },
+      { authorName: "Mahima G.", description: "Sweet but not overpowering—Pistachio Caramel is my new favorite gourmand scent! It’s comforting, unique, and makes me feel like a true indulgence.", rating: 5 }
     ],
     ml:15
   }
