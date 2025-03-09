@@ -59,8 +59,7 @@ const Team = (props: { id: string }) => {
 
                     <div className="w-[100%] h-[90%] border-4 border-[#310C07] rounded-[9%] overflow-hidden relative ">
 
-                        {/* Black Overlay */}
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent z-10"></div>
+                        
 
                         {/* Image Wrapper (For Sliding Effect) */}
                         <div
@@ -77,8 +76,12 @@ const Team = (props: { id: string }) => {
                             ))}
 
                         </div>
+                        {/* Black Overlay */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent z-10"></div>
 
                     </div>
+
+                    
 
 
 

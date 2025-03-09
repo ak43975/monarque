@@ -31,20 +31,29 @@ const HomeSection2 = ()=>{
             </div>
 
             <div className="w-full h-[550px] flex justify-center items-center overflow-hidden">
-                {/* Left Image (section302) */}
-                <img
-                    src="/assets/section302.png"
-                    alt="Section 302"
-                    className="w-2/3 h-full object-cover transition-transform duration-500 hover:scale-110 overflow-hidden"
-                />
+                {/* Left Image (section302) with Overlay */}
+                <div className="relative w-2/3 h-full overflow-hidden transition-transform duration-500 hover:scale-110">
+                    <img
+                        src="/assets/section302.png"
+                        alt="Section 302"
+                        className="w-full h-full object-cover"
+                    />
+                    {/* Overlay */}
+                    <div className="absolute inset-0 bg-black opacity-20"></div>
+                </div>
 
-                {/* Right Image (section301) */}
-                <img
-                    src="/assets/section301.png"
-                    alt="Section 301"
-                    className="w-1/3 h-full object-cover transition-transform duration-500 hover:scale-110 overflow-hidden"
-                />
+                {/* Right Image (section301) with Overlay */}
+                <div className="relative w-1/3 h-full overflow-hidden transition-transform duration-500 hover:scale-110">
+                    <img
+                        src="/assets/section301.png"
+                        alt="Section 301"
+                        className="w-full h-full object-cover"
+                    />
+                    {/* Overlay */}
+                    <div className="absolute inset-0 bg-black opacity-20"></div>
+                </div>
             </div>
+
         </div>
     )
 }

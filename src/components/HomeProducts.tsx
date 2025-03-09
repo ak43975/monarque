@@ -5,6 +5,9 @@ import product3 from "../assets/OceanNoirSKU_page-0001.jpg"
 import { useNavigate } from "react-router-dom";
 import { CartContext } from "../context/CartContext";
 import { useContext, useEffect , useState } from "react";
+import diamond from "../assets/m1.svg"
+import returns from "../assets/m2.svg"
+import cod from "../assets/m3.svg"
 
 interface Data{
     image:string
@@ -50,6 +53,8 @@ const HomeProducts = () => {
             },
         ];
 
+        
+
         // Ensure `cartContext?.prodImg` is available before using it
         if (cartContext?.prodImg) {
             initialData = initialData.map((item, index) => ({
@@ -61,10 +66,28 @@ const HomeProducts = () => {
         setData(initialData);
     }, [cartContext]);
 
+    const data123 = [{
+        image : diamond,
+        content : "Precious"
+    },{
+        image : returns,
+        content : "Potent"
+    },{
+        image : cod,
+        content : "Personal"
+    }]
+
     return (
         <div>
-            <div className="py-[2.9%] text-[32px] font-[500] text-center">
-                PRECIOUS, POTENT, PERSONAL
+            <div className="flex justify-center gap-[9%] py-[2%]">
+                {
+                    data123.map((item)=>(
+                        <div className="flex items-center gap-[10px]">
+                            <div><img src={item.image} alt="" className="w-3/4"/></div>
+                            <div className="text-[16px] font-[600]">{item.content}</div>
+                        </div>
+                    ))
+                }
             </div>
 
             <div className="flex">

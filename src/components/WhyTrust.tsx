@@ -20,7 +20,7 @@ const WhyTrust = () => {
         },
         {
             image: clinicallyProven,
-            title: "Unique,Innovative, Niche - New Age, Trendy , Adaptive formulation"
+            title: "Unique, Innovative, New Age, Trendy , Adaptive formulation"
         }
     ]
     return (
@@ -34,7 +34,7 @@ const WhyTrust = () => {
                     data.map((item) => (
                         <div className="flex flex-col justify-center items-center gap-[10px] w-[25%]">
                             <img src={item.image} alt="" className="" />
-                            <div className="w-[115%] mx-auto text-center break-words whitespace-normal leading-tight">
+                            <div className="w-[100%] mx-auto text-center break-words whitespace-normal leading-tight">
                                 {item.title}
                             </div>
                         </div>

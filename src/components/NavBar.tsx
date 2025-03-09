@@ -32,9 +32,16 @@ const NavBar = () => {
 
     return (
         <div className="w-[100%]  border-amber-600">
-            <div className=" bg-[#3C0B04] w-[100%] py-[0.5%] flex justify-end ">
-                <div className=" border-black w-[62%] flex justify-between items-center px-[5%]">
-                    <img src={monarque} alt="" className="h-[67px] w-[219px]  " />
+            <div className=" bg-[#3C0B04] w-[100%] flex justify-end py-[0.5%]">
+                <div className=" border-black w-[100%] flex justify-between items-center px-[5%]">
+                    <img src={monarque} alt="" className=" h-auto w-[160px] pt-[0.2%]  " onClick={() => navigate("/")} />
+
+                    <div className="bg-[#3C0B04]  w-[100%] flex justify-center items-center text-white gap-[2%] py-[0.4%] text-sm pr-[10%]">
+                        <span className=" cursor-pointer" onClick={() => navigate("/")}>Home</span>
+                        <span className="cursor-pointer" onClick={() => navigate("/products")}>Products</span>
+                        <span className="cursor-pointer" onClick={() => scrollToSection("team")}>Our Team</span>
+                        <span className="cursor-pointer" onClick={() => scrollToSection("contact")}>Contact Us</span>
+                    </div>
 
                     <div className="flex gap-[20px] text-[16px] font-[400] ">
                         {/* <div><img src={search} alt="" className="cursor-pointer" /></div>
@@ -52,12 +59,12 @@ const NavBar = () => {
                 </div>
             </div>
 
-            <div className="bg-[#3C0B04] w-[100%] flex justify-center text-white gap-[2%] py-[0.4%] pb-[0.7%] ">
-                <span className="cursor-pointer" onClick={() => navigate("/")}>Home</span>
+            {/* <div className="bg-[#3C0B04] w-[100%] flex justify-center text-white gap-[2%] py-[0.4%] pb-[1.5%] text-sm">
+                <span className=" cursor-pointer" onClick={() => navigate("/")}>Home</span>
                 <span className="cursor-pointer" onClick={() => navigate("/products")}>Products</span>
                 <span className="cursor-pointer" onClick={() => scrollToSection("team")}>Our Team</span>
                 <span className="cursor-pointer" onClick={() => scrollToSection("contact")}>Contact Us</span>
-            </div>
+            </div> */}
 
             <div className="bg-[#3C0B04] flex justify-center p-[0.5%] border border-white w-[50px] h-[50px] rounded-full fixed z-20 top-[91%] right-[1%] shadow-sm shadow-white" onClick={() => {
                 window.scrollTo({ top: 0, behavior: "smooth" });

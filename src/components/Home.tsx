@@ -27,7 +27,7 @@ const Home = () => {
     
     return (
         <div className="">
-            <Hero></Hero>
+            <Hero id="hero"></Hero>
             <HomeSection2></HomeSection2>
             <HomeProducts></HomeProducts>
             <Team id="team"></Team>

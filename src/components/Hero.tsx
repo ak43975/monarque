@@ -19,9 +19,9 @@
 // export default Hero
 
 
-const Hero = () => {
+const Hero = (props: { id: string }) => {
     return (
-        <div className="w-full h-[100vh] relative overflow-hidden">
+        <div {...props} className="w-full h-[100vh] relative overflow-hidden">
             <div className="w-full h-full bg-[url('/assets/herosection3.png')] bg-cover bg-center bg-fixed">
                 <div className="text-white absolute w-full text-center flex flex-col gap-5 top-[90%]">
                     {/* <div className="text-[32px] font-[500]">INTRODUCING MONARQUE PERFUMES</div>
