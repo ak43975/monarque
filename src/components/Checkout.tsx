@@ -100,12 +100,8 @@
 
 // export default Checkout;
 
-
-
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { CartContext } from "../context/CartContext";
-
-import { useState } from "react";
 import { useNavigate } from "react-router-dom"; 
 
 const Checkout = () => {
@@ -117,12 +113,21 @@ const Checkout = () => {
   }
   const { reset } = cartContext;
   
+  // Available fragrances
+  const fragranceOptions = [
+    "Oud Eclipse",
+    "Cedar Bloom",
+    "Ocean Noir",
+    "Pistachio Caramel"
+  ];
+  
   // State for user details
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
     address: "",
+    fragrances: [] as string[]
   });
 
   // Handle form input changes
@@ -130,9 +135,25 @@ const Checkout = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  
-
-  // AKfycbxNBg546auBwT6B7oYmpTs9PT538zTsPqdfcWFgUKe3lzbUUXS5pVU601L6SFurmrAn
+  // Handle fragrance checkbox changes
+  const handleFragranceChange = (fragrance: string) => {
+    setFormData(prevState => {
+      // Check if the fragrance is already selected
+      if (prevState.fragrances.includes(fragrance)) {
+        // If selected, remove it
+        return {
+          ...prevState,
+          fragrances: prevState.fragrances.filter(f => f !== fragrance)
+        };
+      } else {
+        // If not selected, add it
+        return {
+          ...prevState,
+          fragrances: [...prevState.fragrances, fragrance]
+        };
+      }
+    });
+  };
 
   // Handle form submission
   const handleSubmit = async (e: React.FormEvent) => {
@@ -140,7 +161,7 @@ const Checkout = () => {
   
     try {
       console.log(formData);
-      const response = await fetch("https://script.google.com/macros/s/AKfycbwCeAZQX6bLeBep2_CnshbVVEg0fZL4r7ugzN7bwGxCPGNKzCraQzrZE8sQjZr8q6NE/exec", {
+      const response = await fetch("https://script.google.com/macros/s/AKfycbw1yWEKJ72M1sXCyD18l4WcHTg2566wrui6R3EmRgTfnC0XGbclj6UVUXtNBkBJT-9z/exec", {
         redirect: "follow",  // Important to follow redirects
         method: "POST",
         body: JSON.stringify(formData),
@@ -153,23 +174,12 @@ const Checkout = () => {
         .catch(error => console.error(error));
 
       console.log(response);
-      // alert("Order Placed Successfully! COD Available.");
       navigate("/ordersuccess");
       reset();
-      // if (response.data.status === "success") {
-      //   alert("Order Placed Successfully! COD Available.");
-      //   navigate("/ordersuccess");
-      // } else {
-      //   alert("Failed to place order. Please try again.");
-      // }
     } catch (error) {
       alert("Error placing order. Check your internet connection.");
     }
   };
-
-  
-  
-  
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
@@ -219,12 +229,35 @@ const Checkout = () => {
               className="w-full p-2 border rounded-md"
             />
           </div>
+          <div>
+            <label className="block font-medium mb-2">Select Fragrances</label>
+            <div className="space-y-2 border rounded-md p-3">
+              {fragranceOptions.map((fragrance) => (
+                <div key={fragrance} className="flex items-center">
+                  <input
+                    type="checkbox"
+                    id={`fragrance-${fragrance}`}
+                    checked={formData.fragrances.includes(fragrance)}
+                    onChange={() => handleFragranceChange(fragrance)}
+                    className="mr-2 h-4 w-4"
+                  />
+                  <label htmlFor={`fragrance-${fragrance}`} className="cursor-pointer">
+                    {fragrance}
+                  </label>
+                </div>
+              ))}
+            </div>
+            {formData.fragrances.length === 0 && (
+              <p className="text-red-500 text-sm mt-1">Please select at least one fragrance</p>
+            )}
+          </div>
           <div className="text-center text-green-600 font-semibold">
             <p>✅ Cash on Delivery (COD) is Available!</p>
           </div>
           <button
             type="submit"
-            className="w-full bg-[#3C0B04]/90 text-white p-3 rounded-md hover:bg-[#3C0B04] transition duration-200 cursor-pointer"
+            disabled={formData.fragrances.length === 0}
+            className="w-full bg-[#3C0B04]/90 text-white p-3 rounded-md hover:bg-[#3C0B04] transition duration-200 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
           >
             Place Order
           </button>

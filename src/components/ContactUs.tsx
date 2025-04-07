@@ -1,47 +1,48 @@
 import { useState } from "react";
 
 const ContactUs = (props: { id: string }) => {
-  // State for form data
   const [formData, setFormData] = useState({
     name: "",
     mobile: "",
     email: "",
     message: "",
+    perfume: "",
   });
 
-  // Handle input change
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
   ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-
-  // Handle form submission
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
     try {
       console.log(formData);
       const response = await fetch(
-        "https://script.google.com/macros/s/AKfycbyucf0H_Dc52p117BCRGrPVgnBuUzGdymuPSMvIspQTKJtoflz2nFkGUUY7I11KFsBP/exec",
+        "https://script.google.com/macros/s/AKfycbwv0tn5GK5g53h0nY9QVGaGs_hN1c29NCEpt6thpbGT7v17ZZWmgy2PrKSi7aKL82_j/exec",
         {
-          redirect: "follow", // Follow redirects
+          redirect: "follow",
           method: "POST",
           body: JSON.stringify(formData),
           headers: {
-            "Content-Type": "text/plain;charset=utf-8", // Prevents CORS preflight
+            "Content-Type": "text/plain;charset=utf-8",
           },
         }
       );
       console.log(response);
-    //   const data = await response.json();
-    //   console.log(data);
-    //   alert("Message Sent Successfully!");
     } catch (error) {
       console.log("Error sending message. Check your internet connection.");
     }
-    setFormData({ name: "", mobile: "", email: "", message: "" });
+
+    setFormData({
+      name: "",
+      mobile: "",
+      email: "",
+      message: "",
+      perfume: "",
+    });
   };
 
   return (
@@ -57,15 +58,16 @@ const ContactUs = (props: { id: string }) => {
 
           <div className="text-[18px] font-[400]">
             <table>
-              <tr>
-                <td className="p-2">Phone:</td>
-                <td className="p-2">+91 8800207169</td>
-              </tr>
-
-              <tr>
-                <td className="p-2">Email:</td>
-                <td className="p-2">abhinavkapoor221@gmail.com</td>
-              </tr>
+              <tbody>
+                <tr>
+                  <td className="p-2">Phone:</td>
+                  <td className="p-2">+91 8800207169</td>
+                </tr>
+                <tr>
+                  <td className="p-2">Email:</td>
+                  <td className="p-2">abhinavkapoor221@gmail.com</td>
+                </tr>
+              </tbody>
             </table>
           </div>
         </div>
@@ -105,11 +107,25 @@ const ContactUs = (props: { id: string }) => {
                   className="border border-black/20 w-[90%] h-[40px] mx-auto px-[2%] rounded-sm"
                   required
                 />
+                <select
+                  name="perfume"
+                  value={formData.perfume}
+                  onChange={handleChange}
+                  className="border border-black/20 w-[90%] h-[40px] mx-auto px-[2%] rounded-sm text-neutral-400"
+                  required
+                >
+                  <option value="" className="text-[#3C0B04] ">SELECT PERFUME</option>
+                  <option value="Oud Eclipse" className="text-[#3C0B04]">Oud Eclipse</option>
+                  <option value="Cedar Bloom" className="text-[#3C0B04]">Cedar Bloom</option>
+                  <option value="Ocean Noir" className="text-[#3C0B04]">Ocean Noir</option>
+                  <option value="Pistachio Caramel" className="text-[#3C0B04]">Pistachio Caramel</option>
+                </select>
                 <textarea
                   name="message"
-                  placeholder="MESSAGE"
+                  placeholder="MESSAGE (max 300 characters)"
                   value={formData.message}
                   onChange={handleChange}
+                  maxLength={300}
                   className="border border-black/20 w-[90%] mx-auto px-[2%] rounded-sm min-h-[100px] py-[1%]"
                 />
                 <button
